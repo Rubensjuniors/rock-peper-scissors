@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600;700&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="./assets/css/style.css">
+
+  <title>pedra papel tesoura lagarto spock</title>
+
+</head>
+<body id="background">
+  <!-- Header com Logo e contador de Pontos -->
+  <header id="header">
+    <nav class="scoreboard container">
+      <picture id="logo">
+        <img src="./assets/images/logo-bonus.svg" alt="Logo">
+      </picture>
+      <div class="score medium-general-font">
+        <span>score</span>
+        <p id="score-points" class="large-general-font">0</p>
+      </div>
+    </nav>
+  </header>
+
+  <!-- corpo do game -->
+  <main>
+    <!-- conatiner das ops(pedra papel tesoura lagarto spock) -->
+    <section class="primary-section container">
+      <div class="picked-cards">
+        <button class="card-element card-scissors">
+          <img src="./assets/images/icon-scissors.svg" alt="scissors">
+        </button>
+        <button class="card-element card-paper">
+          <img src="./assets/images/icon-paper.svg" alt="paper">
+        </button>
+        <button class="card-element card-rock">
+          <img src="./assets/images/icon-rock.svg" alt="rock">
+        </button>
+        <button class="card-element card-lizard">
+          <img src="./assets/images/icon-lizard.svg" alt="lizard">
+        </button>
+        <button class="card-element card-spock">
+          <img src="./assets/images/icon-spock.svg" alt="spock">
+        </button>
+      </div>
+
+      <div class="start-panel">
+
+        <ul class="chosen-cards">
+          <li class="selected-card-element ativo"><img src="./assets/images/question.png" alt="question"></li>
+          <li class="selected-card-element"><img src="./assets/images/icon-scissors.svg" alt="scissors"></li>
+          <li class="selected-card-element"><img src="./assets/images/icon-paper.svg" alt="paper"></li>
+          <li class="selected-card-element"><img src="./assets/images/icon-rock.svg" alt="rock"></li>
+          <li class="selected-card-element"><img src="./assets/images/icon-lizard.svg" alt="lizard"></li>
+          <li class="selected-card-element"><img src="./assets/images/icon-spock.svg" alt="spock"></li>
+        </ul>
+
+        <button id="start-button" class="medium-general-font ">Start</button>
+      </div>
+    </section>
+
+    <section class="rules">
+      <button id="button-rules" class="small-general-font">Rules</button>
+
+      <!-- Falta popup do rules e segunda parte do game -->
+    </section>
+
+
+
+
+  </main>
+
+
+
+  <!-- <script src="./assets/js/index.js"></script> -->
+
+</body>
+</html>

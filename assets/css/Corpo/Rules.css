@@ -1,0 +1,42 @@
+.rules{
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  padding: 20px;
+}
+
+#button-rules{
+  padding: 10px 20px;
+  color:#ffffff ;
+  background: transparent;
+  border: 2px solid #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  border-radius: 10px;
+  transition: .3s;
+  cursor: pointer;
+}
+
+#button-rules:hover{
+  background-color: #ffffff;
+  color:hsl(229, 25%, 31%) ;
+}
+@media (max-width:700px){
+  .rules{
+    justify-content: center;
+  }
+  #button-rules{
+    margin-top: 10px;
+  }
+  #button-rules:hover{
+    background: transparent;
+    color:#ffffff;
+    
+  }
+}
+
+@media (min-height:920px){
+  #button-rules{
+    margin-top: 90px;
+  }
+}

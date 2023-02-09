@@ -1,0 +1,39 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+img{
+  display: block;
+  max-width: 100%;
+}
+a{
+  text-decoration: none;
+}
+ul{
+  list-style: none;
+}
+
+#background{
+  background: hsl(214, 47%, 23%);
+  background: radial-gradient(circle, hsl(214, 47%, 23%) 0%, hsl(237, 49%, 15%) 100%);
+}
+
+.primary-section{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+}
+
+.container{
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+@media (min-height: 920px) {
+  .primary-section{
+    gap: 64px;
+  }
+}

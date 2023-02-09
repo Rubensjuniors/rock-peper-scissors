@@ -1,0 +1,48 @@
+.start-panel{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+}
+
+.chosen-cards{
+  background: var(--color-background-white);
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.selected-card-element{
+ display: none;
+}
+.selected-card-element.ativo{
+  display: block;
+}
+
+#start-button{
+  padding: 10px 30px;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  border-radius: 10px;
+  border: 3px solid #ffffff;
+  transition: .3s;
+  cursor: pointer;
+}
+#start-button:hover{
+  background: transparent;
+  color: #ffffff;
+  transition: .3s;
+}
+
+@media (min-height: 920px) {
+  .start-panel{
+    gap: 80px;
+  }
+  .chosen-cards{
+    width: 200px;
+    height: 200px;
+  }
+  
+}
