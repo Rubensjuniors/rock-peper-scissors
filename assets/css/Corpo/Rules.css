@@ -1,42 +1,79 @@
-.rules{
-  display: flex;
-  align-items: center;
-  justify-content: end;
-  padding: 20px;
-}
 
-#button-rules{
+#button-rules {
   padding: 10px 20px;
-  color:#ffffff ;
+  color: #ffffff;
   background: transparent;
   border: 2px solid #ffffff;
   text-transform: uppercase;
   letter-spacing: 5px;
   border-radius: 10px;
-  transition: .3s;
+  transition: 0.3s;
   cursor: pointer;
+  position: absolute;
+  bottom: 20px;
+  right: 15px;
+
 }
 
-#button-rules:hover{
+#button-rules:hover {
   background-color: #ffffff;
-  color:hsl(229, 25%, 31%) ;
+  color: hsl(229, 25%, 31%);
 }
-@media (max-width:700px){
-  .rules{
-    justify-content: center;
-  }
-  #button-rules{
+@media (max-width: 700px) {
+  
+  #button-rules {
     margin-top: 10px;
+    right: 140px;
+    bottom: 20px;
   }
-  #button-rules:hover{
+  #button-rules:hover {
     background: transparent;
-    color:#ffffff;
-    
+    color: #ffffff;
   }
 }
 
-@media (min-height:920px){
-  #button-rules{
+@media (min-height: 920px) {
+  #button-rules {
     margin-top: 90px;
+    bottom: 20px;
   }
+}
+
+.modal-rules {
+  width: 100vw;
+  height: 100%;
+  background: var(--color-background-modal);
+  position: absolute;
+  top: 0;
+  z-index: 1000;
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+.modal-imagem{
+  width: 600px;
+  height: 500px;
+  background: var(--color-background-white);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  gap: 32px;
+  border-radius: 10px;
+}
+#fechar{
+  background: transparent;
+  border: none;
+  align-self: flex-end;
+
+
+}
+@media (max-width: 700px) {
+  .modal-imagem img{
+    width: 100px;
+  }
+}
+@media (min-height: 920px) {
+
 }

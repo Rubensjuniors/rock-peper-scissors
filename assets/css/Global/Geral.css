@@ -15,7 +15,9 @@ ul{
   list-style: none;
 }
 
+
 #background{
+  position: relative;
   background: hsl(214, 47%, 23%);
   background: radial-gradient(circle, hsl(214, 47%, 23%) 0%, hsl(237, 49%, 15%) 100%);
 }
@@ -25,6 +27,8 @@ ul{
   flex-direction: column;
   align-items: center;
   gap: 32px;
+  padding-bottom: 23px;
+  
 }
 
 .container{
@@ -32,8 +36,15 @@ ul{
   margin: 0 auto;
 }
 
+@media (max-width:700px){
+  .primary-section{
+    padding-bottom: 100px;
+  }
+}
+
 @media (min-height: 920px) {
   .primary-section{
     gap: 64px;
+    padding-bottom: 180px;
   }
 }

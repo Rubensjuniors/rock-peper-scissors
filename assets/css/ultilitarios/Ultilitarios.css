@@ -3,6 +3,7 @@
   --font-color: hsl(229, 25%, 31%);
 
   --color-background: hsl(214, 47%, 23%);
+  --color-background-modal: rgba(0,0,0,0.4);
   --color-background-white: #ffffff;
 
   --color-score-text: hsl(229, 64%, 46%);
