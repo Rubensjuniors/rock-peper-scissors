@@ -43,6 +43,6 @@ ul{
 @media (min-height: 920px) {
   .primary-section{
     gap: 64px;
-    padding-bottom: 180px;
+    padding-bottom: 90px;
   }
 }

@@ -21,7 +21,7 @@
 <body id="background">
   <!-- Header com Logo e contador de Pontos -->
   <header id="header">
-    <nav class="scoreboard container">
+    <div class="scoreboard container">
       <picture id="logo">
         <img src="./assets/images/logo-bonus.svg" alt="Logo">
       </picture>
@@ -29,7 +29,7 @@
         <span>score</span>
         <p id="score-points" class="large-general-font">0</p>
       </div>
-    </nav>
+    </div>
   </header>
 
   <!-- corpo do game -->
@@ -56,15 +56,15 @@
 
       <div class="start-panel">  
         <ul class="chosen-cards">
+          <li id="scissors" class="selected-card-element"><img src="./assets/images/icon-scissors.svg" alt="scissors"></li>
+          <li id="paper" class="selected-card-element"><img src="./assets/images/icon-paper.svg" alt="paper"></li>
+          <li id="rock" class="selected-card-element"><img src="./assets/images/icon-rock.svg" alt="rock"></li>
+          <li id="lizard" class="selected-card-element"><img src="./assets/images/icon-lizard.svg" alt="lizard"></li>
+          <li id="spock" class="selected-card-element"><img src="./assets/images/icon-spock.svg" alt="spock"></li>
           <li class="selected-card-element ativo"><img src="./assets/images/question.png" alt="question"></li>
-          <li class="selected-card-element"><img src="./assets/images/icon-scissors.svg" alt="scissors"></li>
-          <li class="selected-card-element"><img src="./assets/images/icon-paper.svg" alt="paper"></li>
-          <li class="selected-card-element"><img src="./assets/images/icon-rock.svg" alt="rock"></li>
-          <li class="selected-card-element"><img src="./assets/images/icon-lizard.svg" alt="lizard"></li>
-          <li class="selected-card-element"><img src="./assets/images/icon-spock.svg" alt="spock"></li>
         </ul>
 
-        <button class="start-button medium-general-font ">Start</button>
+        <button id="start" class="white-button medium-general-font ">Start</button>
       </div>
     </section>
     
@@ -85,7 +85,7 @@
       
       <div class="you-win">
         <h1 id="" class="large-general-font">You Win</h1>
-        <button id="play-again" class="start-button medium-general-font">Play again</button>
+        <button id="play-again" class="white-button medium-general-font">Play again</button>
       </div>
       
     </section>
@@ -106,7 +106,7 @@
 
 
 
-  <!-- <script src="./assets/js/index.js"></script> -->
+  <script src="./assets/js/index.js"></script>
 
 </body>
 
