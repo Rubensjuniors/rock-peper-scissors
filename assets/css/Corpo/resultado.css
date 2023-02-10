@@ -1,0 +1,72 @@
+.secondary-section{
+  display: grid;
+  grid-template-areas: "picked youWin house";
+  align-items: center;
+  justify-content: space-around;
+  padding: 50px 20px 30px 20px;
+}
+.card-picked,.card-house{
+  width: 200px;
+  height: 200px;
+  background: var(--color-background-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+.container-pecked{
+  grid-area: picked;
+}
+
+.container-house{
+grid-area: house;
+}
+
+.you-win{
+  grid-area: youWin;
+}
+.card-picked img, .card-house img{
+  width: 70px;
+}
+
+.you-win h1{
+  color: #ffffff;
+  text-align: center;
+  margin-bottom: 12px;
+}
+.you-win button{
+  display: block;
+  margin: 0 auto;
+}
+
+@media (max-width: 750px) {
+  .secondary-section{
+    padding-top: 30px;
+    padding-bottom: 20px;
+    gap: 32px;
+    grid-template-areas: "picked house"
+    "youWin youWin";
+  }
+  .card-picked img, .card-house img{
+    width: 50px;
+  }
+
+   .card-picked,.card-house{
+    width: 150px;
+    height: 150px;
+  }
+
+}
+@media (max-width: 750px) {
+  .card-picked,.card-house{
+    width: 130px;
+    height: 130px;
+  }
+}
+
+@media (min-height: 920px) {
+  .secondary-section{
+    padding-top: 200px;
+    padding-bottom: 300px;
+  }
+}

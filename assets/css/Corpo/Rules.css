@@ -1,4 +1,9 @@
-
+.rules{
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  padding: 20px;
+}
 #button-rules {
   padding: 10px 20px;
   color: #ffffff;
@@ -9,9 +14,7 @@
   border-radius: 10px;
   transition: 0.3s;
   cursor: pointer;
-  position: absolute;
-  bottom: 20px;
-  right: 15px;
+
 
 }
 
@@ -20,12 +23,9 @@
   color: hsl(229, 25%, 31%);
 }
 @media (max-width: 700px) {
-  
-  #button-rules {
-    margin-top: 10px;
-    right: 140px;
-    bottom: 20px;
-  }
+.rules{
+  justify-content: center;
+}
   #button-rules:hover {
     background: transparent;
     color: #ffffff;
@@ -33,10 +33,7 @@
 }
 
 @media (min-height: 920px) {
-  #button-rules {
-    margin-top: 90px;
-    bottom: 20px;
-  }
+ 
 }
 
 .modal-rules {
@@ -51,29 +48,42 @@
   justify-content: center;
 }
 .modal-imagem{
-  width: 600px;
-  height: 500px;
+  width: 450px;
+  height: 430px;
   background: var(--color-background-white);
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   padding: 20px;
-  gap: 32px;
   border-radius: 10px;
 }
 #fechar{
   background: transparent;
   border: none;
   align-self: flex-end;
+  cursor: pointer;
 
 
 }
 @media (max-width: 700px) {
-  .modal-imagem img{
-    width: 100px;
+  .modal-imagem{
+    width: 350px;
+    height: 430px;
+    gap: 20px;
   }
+  
 }
+  @media (max-width: 400px) {
+    .modal-imagem{
+      width: 300px;
+      height: 360px;
+      gap: 20px;
+    }
+  }
 @media (min-height: 920px) {
-
+  .modal-imagem{
+    width: 450px;
+    height: 470px;
+    gap: 28px;
+  }
 }
