@@ -1,5 +1,5 @@
 .secondary-section{
-  display: grid;
+  display: none;
   grid-template-areas: "picked youWin house";
   align-items: center;
   justify-content: space-around;
@@ -17,11 +17,9 @@
 .container-pecked{
   grid-area: picked;
 }
-
 .container-house{
 grid-area: house;
 }
-
 .you-win{
   grid-area: youWin;
 }
