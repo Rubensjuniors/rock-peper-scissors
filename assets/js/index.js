@@ -1,27 +1,30 @@
-const classActive = "ativo";
-const elementCards = document.querySelectorAll(".card-element");
-const buttonStart = document.querySelector('#start');
-const elementCardspicked = document.querySelectorAll(".selected-card-element ");
+const activeClass = "ativo";
+const telaSmall = window.matchMedia("(max-width: 700px)");
+const cardElements = document.querySelectorAll(".card-element");
+const startButton = document.querySelector('#start');
+const pickedCardElements = document.querySelectorAll(".selected-card-element");
 
-function handleCardClick(cardItem){
-  const cardImagemAlt = this.children[0].getAttribute("alt");
 
- 
-  elementCardspicked.forEach((cardPicked)=>{
-    const teste = cardPicked.getAttribute('id')
-    cardPicked.classList.remove("ativo")
-    if(cardImagemAlt === teste){
-      cardPicked.classList.add("ativo")
-      console.log('ppoas')
+function handleCardClick(){
+  const cardAlt = this.children[0].getAttribute("alt");
+  pickedCardElements.forEach((pickedCard) => {
+    pickedCard.classList.remove(activeClass);
+    if (cardAlt === pickedCard.getAttribute('id')) {
+      pickedCard.classList.add(activeClass);
+      console.log(pickedCard)
     }
   });
 
-
-
-  
-console.log(cardImagemAlt)
 }
 
-elementCards.forEach((cardElement)=>{
-  cardElement.addEventListener('click', handleCardClick)
+cardElements.forEach((card) => {
+  if(telaSmall){
+    card.addEventListener('touchstart', handleCardClick);
+  }
+    card.addEventListener('click', handleCardClick);
+    card.addEventListener('mouseover', handleCardClick);
+
 });
+
+
+console.log(pickedCardElements)

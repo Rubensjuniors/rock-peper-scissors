@@ -1,5 +1,5 @@
 .secondary-section{
-  display: none;
+  display: grid;
   grid-template-areas: "picked youWin house";
   align-items: center;
   justify-content: space-around;
