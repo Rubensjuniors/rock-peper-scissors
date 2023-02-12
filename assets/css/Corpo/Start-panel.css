@@ -14,13 +14,6 @@
   align-items: center;
   justify-content: center;
 }
-.selected-card-element{
- display: none;
-}
-.selected-card-element.ativo{
-  display: block;
-}
-
 
 
 @media (min-height: 920px) {
