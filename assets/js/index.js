@@ -44,7 +44,7 @@ function getUserChoice() {
 }
 
 function getHouseChoice() {
-  const numAleatorio = parseInt(Math.random() * cardElementsHouse.length);
+  const numAleatorio = Math.floor(Math.random() * cardElementsHouse.length);
   const pickedHouse = cardElementsHouse[numAleatorio].innerHTML;
   return (cardHouse.innerHTML = pickedHouse);
 }
@@ -102,10 +102,10 @@ playAgainButton.addEventListener("click", () => {
 });
 
 // button das regras mostra modal
-rulesButton.addEventListener("click",()=>{
+rulesButton.addEventListener("click", () => {
   rulesModal.style.display = "flex";
 });
 // button de fechar modal
-closeModalbutton.addEventListener("click",()=>{
+closeModalbutton.addEventListener("click", () => {
   rulesModal.style.display = hide;
 });
