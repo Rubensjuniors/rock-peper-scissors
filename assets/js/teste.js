@@ -74,9 +74,8 @@ pickedCardElements.forEach((card)=>{
 
 
 
-
 // button das regras mostra modal
-rulesButton.addEventListener("click",()=>{
+  rulesButton.addEventListener("click",()=>{
   rulesModal.style.display = "flex";
 });
 // button de fechar modal

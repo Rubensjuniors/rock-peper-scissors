@@ -27,7 +27,7 @@
       </picture>
       <div class="score medium-general-font">
         <span>score</span>
-        <p id="score-points" class="large-general-font">0</p>
+        <div id="score-points" class="large-general-font">0</div>
       </div>
     </div>
   </header>
@@ -55,9 +55,7 @@
       </div>
 
       <div class="start-panel">  
-        <div class="chosen-cards">
-          <img src="./assets/images/question.png" alt="question">
-        </div>
+        <div class="chosen-cards"><p class=" large-general-font ativo">?</p></div>
 
         <button id="start" class="white-button medium-general-font">Start</button>
       </div>
@@ -66,16 +64,16 @@
     <section class="secondary-section container">
       <div class="container-picked">
         <h1 class="secondary-section-titulo medium-general-font">You Picked</h1>
-        <picture class="card-picked"><img src="./assets/images/question.png" alt="question"></picture>
+        <picture class="card-picked"></picture>
       </div>
       
       <div class="container-house">
         <h1 class="secondary-section-titulo medium-general-font">The House</h1>
-        <div class="card-house"><img src="" alt=""></div>
+        <picture class="card-house"></picture>
       </div>
       
       <div class="you-win">
-        <h1 id="" class="large-general-font">You Win</h1>
+        <h1 id="status" class="large-general-font">You Win</h1>
         <button id="play-again" class="white-button medium-general-font">Play again</button>
       </div>
       
@@ -99,6 +97,7 @@
 
   <script src="./assets/js/index.js"></script>
 
+  
 </body>
 
 </html>
