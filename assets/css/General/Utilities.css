@@ -1,0 +1,66 @@
+:root {
+  --font: "Barlow Semi Condensed";
+  --font-color: hsl(229, 25%, 31%);
+
+  --color-background: hsl(214, 47%, 23%);
+  --color-background-modal: rgba(0,0,0,0.4);
+  --color-background-white: #ffffff;
+
+  --color-score-text: hsl(229, 64%, 46%);
+
+  --border-panel: hsl(217, 16%, 45%);
+  --border-scissors: hsl(39, 89%, 49%);
+  --border-paper: hsl(230, 89%, 62%);
+  --border-rock: hsl(349, 71%, 52%);
+  --border-lizard: hsl(261, 73%, 60%);
+  --border-spock: hsl(189, 59%, 53%);
+}
+
+/* fonts */
+
+.large--font {
+  font-family: var(--font);
+  color: var(--font-color);
+  font-size: 3rem;
+  font-weight: bold;
+}
+.medium--font {
+  font-family: var(--font);
+  color: var(--font-color);
+  font-size: 1.5rem;
+}
+.small--font {
+  font-family: var(--font);
+  color: var(--font-color);
+  font-size: 1rem;
+}
+
+
+/* Buttons */
+
+.white--button{
+  padding: 10px 30px;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  border-radius: 10px;
+  border: 3px solid #ffffff;
+  transition: .3s;
+  cursor: pointer;
+}
+.white--button:hover{
+  background: transparent;
+  color: #ffffff;
+  transition: .3s;
+}
+
+
+
+@media (max-width:700px){
+  .medium-general-font {
+    font-size: 1.3rem;
+  }
+  .white-button:hover{
+    background: #ffffff;
+    color:initial;
+  }
+}

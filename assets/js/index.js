@@ -1,4 +1,3 @@
-const hide = "none";
 const userWinResults = [
   "scissorspaper",
   "paperrock",
@@ -12,100 +11,98 @@ const userWinResults = [
   "spockrock",
 ];
 
-const primarySection = document.querySelector(".primary-section");
-const secondarySection = document.querySelector(".secondary-section");
+const panelCards = document.querySelector(".cards-js");
+const panelResult = document.querySelector(".result-js");
 
-const cardElementsChosen = document.querySelectorAll(".card-element");
-const cardElementsHouse = Array.from(
-  document.querySelectorAll(".card-element")
-);
-const pickedCardElements = document.querySelector(".chosen-cards");
-const cardChosen = document.querySelector(".card-picked");
-const cardHouse = document.querySelector(".card-house");
-const rulesModal = document.querySelector(".modal-rules");
-const resultTitleElement = document.querySelector("#status");
-const score = document.querySelector("#score-points");
+const cardsPlayer = document.querySelectorAll(".cards__element--js");
+const cardsHouse = document.querySelectorAll(".cards__element--js");
 
-const startButton = document.querySelector("#start");
-const playAgainButton = document.querySelector("#play-again");
-const rulesButton = document.querySelector("#button-rules");
-const closeModalbutton = document.querySelector("#fechar");
+const panelChosenCard = document.querySelector(".cards__chosen--js");
+
+const cardChosenPlayer = document.querySelector(".card__player--js");
+const cardChosenHouse = document.querySelector(".card__house--js");
+
+const resultTitle = document.querySelector(".status__title--js");
+const counterPoints = document.querySelector(".scoreboard__counter--js");
+
+const startButton = document.querySelector(".cards__panel--btn");
+const playAgainButton = document.querySelector(".status__button--js");
+const rulesButton = document.querySelector(".rules__button--js");
 
 function handleSelectedCard() {
-  const cardPicked = this.innerHTML;
-  pickedCardElements.innerHTML = cardPicked;
+  const card = this.innerHTML;
+  panelChosenCard.innerHTML = card;
 }
-cardElementsChosen.forEach((cardPicked) => {
-  cardPicked.addEventListener("click", handleSelectedCard);
+cardsPlayer.forEach((card) => {
+  card.addEventListener("click", handleSelectedCard);
 });
 
 function getUserChoice() {
-  return (cardChosen.innerHTML = pickedCardElements.innerHTML);
+  return (cardChosenPlayer.innerHTML = panelChosenCard.innerHTML);
 }
-
 function getHouseChoice() {
-  const numAleatorio = Math.floor(Math.random() * cardElementsHouse.length);
-  const pickedHouse = cardElementsHouse[numAleatorio].innerHTML;
-  return (cardHouse.innerHTML = pickedHouse);
+  const numAleatorio = Math.floor(Math.random() * cardsHouse.length);
+  const choiceHouse = cardsHouse[numAleatorio].innerHTML;
+  return (cardChosenHouse.innerHTML = choiceHouse);
 }
-
 function getUserWinsStatus(result) {
   return userWinResults.some((winStr) => winStr === result);
 }
 
-function calculateScore(num) {
-  const points = parseInt(score.textContent) + num;
-  score.innerHTML = points;
-}
+function winnerGame(){
 
-function calculateWinner(user, house) {
-  if (user === house) {
-    resultTitleElement.innerText = "Tie";
-  } else if (getUserWinsStatus(user + house)) {
-    resultTitleElement.innerText = "You win";
-    calculateScore(1);
-  } else {
-    resultTitleElement.innerText = "You lose";
-    calculateScore(-1);
+  function calculatePoints(num) {
+    const points = parseInt(counterPoints.textContent) + num;
+    counterPoints.innerHTML = points;
   }
+  
+  function calculateWinner(user, house) {
+    if (user === house) {
+      resultTitle.innerText = "Tie";
+    } else if (getUserWinsStatus(user + house)) {
+      resultTitle.innerText = "You win";
+      calculatePoints(1);
+    } else {
+      resultTitle.innerText = "You lose";
+      calculatePoints(-1);
+    }
+  }
+
+  const player = cardChosenPlayer.children[0].getAttribute('alt');
+  const house = cardChosenHouse.children[0].getAttribute('alt');
+
+  return calculateWinner(player, house);
 }
 
-function startGame() {
-  const player = cardChosen.children[0].getAttribute("alt");
-  const house = cardHouse.children[0].getAttribute("alt");
-  calculateWinner(player, house);
+function clearCards() {
+  panelChosenCard.children[0].remove();
+  panelChosenCard.innerHTML = "?";
+  cardChosenPlayer.children[0].remove();
+  cardChosenHouse.children[0].remove();
 }
-
-function clearOptions() {
-  pickedCardElements.innerHTML = '<p class=" large-general-font ativo">?</p>';
-  cardChosen.children[0].remove();
-  cardHouse.children[0].remove();
+function hiddenPanel() {
+  const visible = "hidden";
+  if (!panelCards.classList.contains(visible)) {
+    panelCards.classList.add(visible);
+    panelResult.classList.remove(visible);
+  } else {
+    panelResult.classList.add(visible);
+    panelCards.classList.remove(visible);
+  }
 }
 
 startButton.addEventListener("click", () => {
-  if (pickedCardElements.children[0].classList.contains("ativo")) {
+  if (panelChosenCard.innerHTML === "?") {
     return;
   }
-
+  hiddenPanel();
   getUserChoice();
-
-  primarySection.style.display = hide;
-  secondarySection.style.display = "grid";
   getHouseChoice();
-  startGame();
+  winnerGame()
+ 
 });
 
 playAgainButton.addEventListener("click", () => {
-  clearOptions();
-  primarySection.style.display = "flex";
-  secondarySection.style.display = hide;
-});
-
-// button das regras mostra modal
-rulesButton.addEventListener("click", () => {
-  rulesModal.style.display = "flex";
-});
-// button de fechar modal
-closeModalbutton.addEventListener("click", () => {
-  rulesModal.style.display = hide;
+  hiddenPanel();
+  clearCards();
 });

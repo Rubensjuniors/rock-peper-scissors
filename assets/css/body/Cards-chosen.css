@@ -1,25 +1,26 @@
-.start-panel{
+.cards__panel{
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 40px;
 }
 
-.chosen-cards{
-  background: var(--color-background-white);
+.cards__chosen{
   width: 150px;
   height: 150px;
-  border-radius: 50%;
+  background: var(--color-background-white);
+
   display: flex;
   align-items: center;
   justify-content: center;
+
+  border-radius: 50%;
 }
 
 
 @media (min-height: 920px) {
-  .start-panel{
-    gap: 80px;
-  }
+  .cards__panel{ gap: 80px; }
+  
   .chosen-cards{
     width: 200px;
     height: 200px;

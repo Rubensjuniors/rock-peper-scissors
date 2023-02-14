@@ -1,84 +1,111 @@
-const activeClass = "ativo";
-const hide = 'none';
+const hide = "none";
+const userWinResults = [
+  "scissorspaper",
+  "paperrock",
+  "rocklizard",
+  "lizardspock",
+  "spockscissors",
+  "rockscissors",
+  "scissorslizard",
+  "lizardpaper",
+  "paperspock",
+  "spockrock",
+];
 
 const primarySection = document.querySelector(".primary-section");
 const secondarySection = document.querySelector(".secondary-section");
 
-const cardElements = document.querySelectorAll(".card-element");
-const pickedCardElements = Array.from(document.querySelectorAll(".selected-card-element"));
-const cardPickedSelected = document.querySelector(".card-picked");
+const cardElementsChosen = document.querySelectorAll(".card-element");
+const cardElementsHouse = Array.from(
+  document.querySelectorAll(".card-element")
+);
+const pickedCardElements = document.querySelector(".chosen-cards");
+const cardChosen = document.querySelector(".card-picked");
+const cardHouse = document.querySelector(".card-house");
 const rulesModal = document.querySelector(".modal-rules");
-const quetionMark = document.querySelector("#quetion");
+const resultTitleElement = document.querySelector("#status");
+const score = document.querySelector("#score-points");
 
-const startButton = document.querySelector('#start');
+const startButton = document.querySelector("#start");
 const playAgainButton = document.querySelector("#play-again");
 const rulesButton = document.querySelector("#button-rules");
 const closeModalbutton = document.querySelector("#fechar");
 
-function handleSelectedCard(){
-  // variavel que pega os alt dos dos cards
-  const cardAlt = this.children[0].getAttribute("alt");
-
-  // loop das lista de imagem escolhidas 
-  pickedCardElements.forEach((pickedCard) => {
-    // remoce a class ativo pra ficar so um item ativo
-    pickedCard.classList.remove(activeClass);
-
-    // if que verifica se os alt das imagems são iguais as dos ids
-    if (cardAlt === pickedCard.getAttribute('id')) {
-      // add uma class ativo correspondente ao item clicado
-      pickedCard.classList.add(activeClass);
-
-      // add o card escolhido na outra parte do game
-      cardPickedSelected.innerHTML = pickedCard.innerHTML
-
-      // button de jogar novamente
-      playAgainButton.addEventListener("click", ()=>{
-        
-        // esconde a segunda parte do game e mostra a primeira parte
-        primarySection.style.display = "flex";
-        secondarySection.style.display = hide;
-        
-        // remove a class ativo do card escolhido
-        pickedCard.classList.remove(activeClass);
-
-        // if que verifica se não esta com ativo e add o question mark novamente e remove o card escolhido 
-        if(pickedCard.classList.contains(activeClass) !== activeClass){
-          quetionMark.classList.add(activeClass);
-          cardPickedSelected.innerHTML = '<img src="" alt="" />'
-        }
-      });
-    }
-  });
+function handleSelectedCard() {
+  const cardPicked = this.innerHTML;
+  pickedCardElements.innerHTML = cardPicked;
 }
-// loop pelas opções dos cards
-cardElements.forEach((card) => {
-    card.addEventListener('click', handleSelectedCard);
+cardElementsChosen.forEach((cardPicked) => {
+  cardPicked.addEventListener("click", handleSelectedCard);
 });
 
-// button de start
-startButton.addEventListener("click",()=>{
-  // if que para se nem um card for escolhido
-  if(!cardPickedSelected.children[0].getAttribute("src")){
-   return;
+function getUserChoice() {
+  return (cardChosen.innerHTML = pickedCardElements.innerHTML);
+}
+
+function getHouseChoice() {
+  const numAleatorio = Math.floor(Math.random() * cardElementsHouse.length);
+  const pickedHouse = cardElementsHouse[numAleatorio].innerHTML;
+  return (cardHouse.innerHTML = pickedHouse);
+}
+
+function getUserWinsStatus(result) {
+  return userWinResults.some((winStr) => winStr === result);
+}
+
+function calculateScore(num) {
+  const points = parseInt(score.textContent) + num;
+  score.innerHTML = points;
+}
+
+function calculateWinner(user, house) {
+  if (user === house) {
+    resultTitleElement.innerText = "Tie";
+  } else if (getUserWinsStatus(user + house)) {
+    resultTitleElement.innerText = "You win";
+    calculateScore(1);
+  } else {
+    resultTitleElement.innerText = "You lose";
+    calculateScore(-1);
   }
-  // se card for escolhido esconde primeira parte e mostra a segunda
+}
+
+function startGame() {
+  const player = cardChosen.children[0].getAttribute("alt");
+  const house = cardHouse.children[0].getAttribute("alt");
+  calculateWinner(player, house);
+}
+
+function clearOptions() {
+  pickedCardElements.innerHTML = '<p class=" large-general-font ativo">?</p>';
+  cardChosen.children[0].remove();
+  cardHouse.children[0].remove();
+}
+
+startButton.addEventListener("click", () => {
+  if (pickedCardElements.children[0].classList.contains("ativo")) {
+    return;
+  }
+
+  getUserChoice();
+
   primarySection.style.display = hide;
   secondarySection.style.display = "grid";
+  getHouseChoice();
+  startGame();
 });
 
-pickedCardElements.forEach((card)=>{
-  console.log(Math.random(card) * 5)
-})
-
-
-
+playAgainButton.addEventListener("click", () => {
+  clearOptions();
+  primarySection.style.display = "flex";
+  secondarySection.style.display = hide;
+});
 
 // button das regras mostra modal
-  rulesButton.addEventListener("click",()=>{
+rulesButton.addEventListener("click", () => {
   rulesModal.style.display = "flex";
 });
 // button de fechar modal
-closeModalbutton.addEventListener("click",()=>{
+closeModalbutton.addEventListener("click", () => {
   rulesModal.style.display = hide;
 });

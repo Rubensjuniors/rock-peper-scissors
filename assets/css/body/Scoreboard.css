@@ -1,39 +1,39 @@
-#header {
+.scoreboard {
   padding: 20px 20px 0px 20px;
 }
-.scoreboard {
+.scoreboard__container {
   display: flex;
   align-items: center;
   justify-content: space-between;
+
   padding: 20px;
   border: 3px solid var(--border-panel);
   border-radius: 15px;
 }
-.score {
-  background:var(--color-background-white);
+.scoreboard__points {
   width: 130px;
   height: 100px;
+  background:var(--color-background-white);
+
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  
   border-radius: 5px;
 }
-.score span{
+.scoreboard__points--title{
   color: var(--color-score-text);
 }
 
 
 @media (max-width: 700px) {
-  #header {
+  .scoreboard {
     padding-top: 25px;
-  }
-  .menu-painel {
-    padding: 15px;
   }
 }
 @media (min-height: 920px) {
-  #header {
+  .scoreboard {
     padding-top: 60px;
   }
 }

@@ -1,0 +1,37 @@
+.rules {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+
+  padding: 0 20px 20px 20px;
+}
+.rules__button {
+  background: transparent;
+
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: #ffffff;
+  
+  border: 2px solid #ffffff;
+  padding: 10px 20px;
+  border-radius: 10px;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.rules__button:hover {
+  background-color: #ffffff;
+  color: hsl(229, 25%, 31%);
+}
+
+@media (max-width: 700px) {
+  .rules {
+    justify-content: center;
+    padding: 20px;
+  }
+  .rules__button:hover {
+    background: transparent;
+    color: #ffffff;
+  }
+
+}

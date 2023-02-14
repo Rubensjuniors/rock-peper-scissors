@@ -1,0 +1,70 @@
+.result {
+  display: grid;
+  grid-template-areas: "player youWin house";
+  align-items: center;
+  justify-content: space-around;
+
+  padding: 50px 20px 30px 20px;
+}
+.result__card--player { grid-area: player; }
+
+.result__card--title {
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 3px; 
+  color: #ffffff;
+
+  margin-bottom: 32px;
+}
+
+.result__card--house { grid-area: house; }
+
+.result__cards {
+  width: 200px;
+  height: 200px;
+  background: var(--color-background-white);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+}
+
+.result__status { grid-area: youWin; }
+
+
+.result__status .status__title{
+  text-align: center;
+  color: #ffffff;
+  margin-bottom: 12px;
+}
+
+.result__status .status__button {
+  display: block;
+  margin: 0 auto;
+}
+
+@media (max-width: 750px) {
+  .result {
+    gap: 32px;
+    grid-template-areas:
+      "player house"
+      "youWin youWin";
+      
+    padding-top: 30px;
+    padding-bottom: 20px;
+  }
+
+  .result__cards{
+    width: 130px;
+    height: 130px;
+  }
+}
+
+@media (min-height: 920px) {
+  .result {
+    padding-top: 200px;
+    padding-bottom: 300px;
+  }
+}

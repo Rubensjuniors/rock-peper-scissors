@@ -1,8 +1,8 @@
-@import "../../assets/css/Global/Geral.css";
-@import "../../assets/css/Global/Panel_scoreboard.css";
-@import "../../assets/css/ultilitarios/Ultilitarios.css";
+@import "../../assets/css/General/General.css";
+@import "../../assets/css/General/Utilities.css";
 
-@import "../../assets/css/Corpo/picked-cards.css";
-@import "../../assets/css/Corpo/Start-panel.css";
-@import "../../assets/css/Corpo/resultado.css";
-@import "../../assets/css/Corpo/Rules.css";
+@import "../../assets/css/body/Scoreboard.css";
+@import "../../assets/css/body/Cards.css";
+@import "../../assets/css/body/Cards-chosen.css";
+@import "../../assets/css/body/Result-panel.css";
+@import "../../assets/css/body/Rules.css";

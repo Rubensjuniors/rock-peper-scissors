@@ -1,0 +1,96 @@
+.cards {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+}
+
+.cards__container {
+  max-width: 700px;
+
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+
+  margin: 40px auto 0px auto;
+  padding: 0 20px;
+}
+.cards__element {
+  width: 100px;
+  height: 100px;
+  background: var(--color-background-white);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 15px;
+  transition: 0.6s;
+  cursor: pointer;
+}
+.cards__element:hover {
+  transform: scale(1.1);
+  transition: 0.3s;
+}
+
+.cards__element--scissors { border: 6px solid var(--border-scissors); }
+.cards__element--paper { border: 6px solid var(--border-paper); }
+.cards__element--rock { border: 6px solid var(--border-rock); }
+.cards__element--lizard { border: 6px solid var(--border-lizard); }
+.cards__element--spock { border: 6px solid var(--border-spock); }
+
+.cards__element--scissors:hover {
+  background-color: var(--border-scissors);
+  transition: 0.3s;
+}
+.cards__element--paper:hover {
+  background: var(--border-paper);
+  transition: 0.3s;
+}
+.cards__element--rock:hover {
+  background: var(--border-rock);
+  transition: 0.3s;
+}
+.cards__element--lizard:hover {
+  background: var(--border-lizard);
+  transition: 0.3s;
+}
+.cards__element--spock:hover {
+  background: var(--border-spock);
+  transition: 0.3s;
+}
+
+@media (max-width: 700px) {
+  .cards__element {
+    width: 100px;
+    height: 100px;
+  }
+  .cards__element:hover {
+    transform: none;
+    transition: 0.3s;
+  }
+  .cards__element--scissors:hover,
+  .cards__element--paper:hover,
+  .cards__element--rock:hover,
+  .cards__element--lizard:hover,
+  .cards__element--spock:hover {
+    background-color: #ffffff;
+    transition: 0.3s;
+  }
+}
+@media (min-height: 920px) {
+  .cards {
+    gap: 64px;
+    padding-bottom: 90px;
+  }
+
+  .cards__container {
+    margin-top: 60px;
+  }
+  .cards__element {
+    width: 120px;
+    height: 120px;
+  }
+}
