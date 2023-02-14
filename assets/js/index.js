@@ -50,7 +50,6 @@ function getUserWinsStatus(result) {
 }
 
 function winnerGame(){
-
   function calculatePoints(num) {
     const points = parseInt(counterPoints.textContent) + num;
     counterPoints.innerHTML = points;
