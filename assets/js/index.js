@@ -10,7 +10,7 @@ const userWinResults = [
   "paperspock",
   "spockrock",
 ];
-
+const heije = window.innerHeight;
 const panelCards = document.querySelector(".cards-js");
 const panelResult = document.querySelector(".result-js");
 
@@ -45,11 +45,14 @@ function getHouseChoice() {
   const choiceHouse = cardsHouse[numAleatorio].innerHTML;
   return (cardChosenHouse.innerHTML = choiceHouse);
 }
-function getUserWinsStatus(result) {
-  return userWinResults.some((winStr) => winStr === result);
-}
+
 
 function winnerGame(){
+
+  function getUserWinsStatus(result) {
+    return userWinResults.some((winStr) => winStr === result);
+  }
+
   function calculatePoints(num) {
     const points = parseInt(counterPoints.textContent) + num;
     counterPoints.innerHTML = points;
@@ -105,3 +108,5 @@ playAgainButton.addEventListener("click", () => {
   hiddenPanel();
   clearCards();
 });
+
+

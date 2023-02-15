@@ -61,6 +61,12 @@
     height: 130px;
   }
 }
+@media (min-height: 740px) {
+  .result {
+    padding-top: 100px;
+    padding-bottom: 132px;
+  }
+}
 
 @media (min-height: 920px) {
   .result {
