@@ -83,7 +83,16 @@
     </section>
 
     <section class="rules">
-      <button class="rules__button rules__button--js small--font">Rules</button>
+      <button class="rules__button--open small--font" onclick="openModal()">Rules</button>
+
+      <div class="rules__modal--conatiner rules__modal--js hidden">
+        <div class="rules__modal">
+          <button onclick="closeModal()" class="rules__button--close large--font" >x</button>
+          <div class="rules__modal--img" >
+            <img src="./assets/images/image-rules-bonus.svg" alt="rules">
+          </div>
+        </div>
+      </div>
     </section>
   </main>
 

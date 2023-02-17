@@ -1,3 +1,4 @@
+const visible = "hidden";
 const userWinResults = [
   "scissorspaper",
   "paperrock",
@@ -24,10 +25,11 @@ const cardChosenHouse = document.querySelector(".card__house--js");
 
 const resultTitle = document.querySelector(".status__title--js");
 const counterPoints = document.querySelector(".scoreboard__counter--js");
+const rulesModal = document.querySelector('.rules__modal--js');
 
 const startButton = document.querySelector(".cards__panel--btn");
 const playAgainButton = document.querySelector(".status__button--js");
-const rulesButton = document.querySelector(".rules__button--js");
+
 
 function handleSelectedCard() {
   const card = this.innerHTML;
@@ -83,7 +85,7 @@ function clearCards() {
   cardChosenHouse.children[0].remove();
 }
 function hiddenPanel() {
-  const visible = "hidden";
+  
   if (!panelCards.classList.contains(visible)) {
     panelCards.classList.add(visible);
     panelResult.classList.remove(visible);
@@ -91,6 +93,13 @@ function hiddenPanel() {
     panelResult.classList.add(visible);
     panelCards.classList.remove(visible);
   }
+}
+
+function openModal(){
+  rulesModal.classList.remove(visible);
+}
+function closeModal(){
+  rulesModal.classList.add(visible);
 }
 
 startButton.addEventListener("click", () => {
@@ -108,5 +117,4 @@ playAgainButton.addEventListener("click", () => {
   hiddenPanel();
   clearCards();
 });
-
 

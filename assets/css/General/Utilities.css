@@ -56,7 +56,8 @@
 
 
 @media (max-width:700px){
-  .medium-general-font {
+
+  .medium--font {
     font-size: 1.3rem;
   }
   .white-button:hover{

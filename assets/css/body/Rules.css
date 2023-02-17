@@ -5,7 +5,7 @@
 
   padding: 0 20px 20px 20px;
 }
-.rules__button {
+.rules__button--open {
   background: transparent;
 
   letter-spacing: 5px;
@@ -19,9 +19,42 @@
   cursor: pointer;
 }
 
-.rules__button:hover {
+.rules__button--open:hover {
   background-color: #ffffff;
   color: hsl(229, 25%, 31%);
+}
+
+
+.rules__modal--conatiner{
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1040;
+}
+
+.rules__modal{
+  max-width: 400px;
+  background: #ffffff;
+  padding: 10px 30px 30px 30px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 10px;
+
+}
+.rules__button--close{
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 2rem !important;
+
 }
 
 @media (max-width: 700px) {
@@ -29,9 +62,18 @@
     justify-content: center;
     padding: 20px;
   }
-  .rules__button:hover {
+  .rules__button--open:hover {
     background: transparent;
     color: #ffffff;
   }
+  .rules__modal{
+    width: 300px;
+  }
 
+}
+
+@media (max-width: 350px) {
+  .rules__modal{
+    width: 250px;
+  }
 }
