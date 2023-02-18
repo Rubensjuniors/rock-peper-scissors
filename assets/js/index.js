@@ -48,7 +48,6 @@ function getHouseChoice() {
   return (cardChosenHouse.innerHTML = choiceHouse);
 }
 
-
 function winnerGame(){
 
   function getUserWinsStatus(result) {

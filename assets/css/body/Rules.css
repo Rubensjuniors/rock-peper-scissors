@@ -18,7 +18,6 @@
   transition: 0.3s;
   cursor: pointer;
 }
-
 .rules__button--open:hover {
   background-color: #ffffff;
   color: hsl(229, 25%, 31%);

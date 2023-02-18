@@ -5,7 +5,6 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-
   padding: 20px;
   border: 3px solid var(--border-panel);
   border-radius: 15px;
