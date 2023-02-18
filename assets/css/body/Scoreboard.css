@@ -24,8 +24,6 @@
 .scoreboard__points--title{
   color: var(--color-score-text);
 }
-
-
 @media (max-width: 700px) {
   .scoreboard {
     padding-top: 25px;

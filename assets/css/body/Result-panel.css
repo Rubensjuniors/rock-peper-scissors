@@ -32,18 +32,15 @@
 
 .result__status { grid-area: youWin; }
 
-
 .result__status .status__title{
   text-align: center;
   color: #ffffff;
   margin-bottom: 12px;
 }
-
 .result__status .status__button {
   display: block;
   margin: 0 auto;
 }
-
 @media (max-width: 750px) {
   .result {
     gap: 32px;

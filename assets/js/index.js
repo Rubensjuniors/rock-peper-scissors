@@ -76,7 +76,6 @@ function winnerGame(){
 
   return calculateWinner(player, house);
 }
-
 function clearCards() {
   panelChosenCard.children[0].remove();
   panelChosenCard.innerHTML = "?";

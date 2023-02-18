@@ -79,7 +79,6 @@
     transition: 0.3s;
   }
 }
-
 @media (min-height: 740px) {
   .cards {
     gap: 64px;
